@@ -1,8 +1,15 @@
-    </section>
+    </section> <?php /* end .container */ ?>
 
     <footer>
+
+        <ul class="social">
+            <li class="social__icon social__icon--twitter"><a href="http://www.twitter.com/jamesdoc" target="_blank">Twitter</a></li>
+            <li class="social__icon social__icon--instagram"><a href="http://www.instagram.com/thejamesdoc" target="_blank">Instagram</a></li>
+            <li class="social__icon social__icon--lastfm"><a href="http://www.last.fm/user/jamesdoc" target="_blank">Last.fm</a></li>
+        </ul>
+
     	<small>
-    		&copy; <?=date('Y')?> <?=anchor('','jamesdoc.com');?> &middot;
+    		Design and build by James Doc &middot;
     		<? if ($this->session->userdata('username')) {
 	        	echo anchor('logout','Logout');
 	        } else {

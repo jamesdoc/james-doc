@@ -162,6 +162,8 @@ class Blog extends CI_Controller{
 			$data['desc'] = trim(strip_tags($regs[1]));
 		}
 
+		$data['recent_entries'] = $this->blog_model->get_blog_excerpt_list(5, 0, 250);
+
 		$this->load->view('includes/template',$data);
 
 	}
