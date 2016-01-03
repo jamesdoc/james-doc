@@ -1,0 +1,28 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond $1 !^(index\.php|assets)
+RewriteRule ^(.*)$ index.php/$1 [QSA,L]
+
+RewriteCond %{HTTP_HOST} ^oxfordtraining\.net$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.oxfordtraining\.net$
+RewriteRule ^/?$ "http\:\/\/oxfordtrainingpartnership\.org\.uk" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^cruisingmonthly\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.cruisingmonthly\.com$
+RewriteRule ^/?$ "http\:\/\/cruisingmonthly\.co\.uk" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^jamesdoc\.co\.uk$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.jamesdoc\.co\.uk$
+RewriteRule ^/?$ "http\:\/\/jamesdoc\.com" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^jamesdoc\.uk$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.jamesdoc\.uk$
+RewriteRule ^/?$ "http\:\/\/jamesdoc\.com" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^globe\.church$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.globe\.church$
+RewriteRule ^/?$ "http\:\/\/theglobechurch\.org" [R=301,L]
+

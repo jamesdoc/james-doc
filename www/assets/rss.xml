@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="http://jamesdoc.com/assets/rss.xsl" media="screen"?>
+<rss version="2.0" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule">
+<channel>
+	<title>James Doc</title>
+	<link>http://jamesdoc.com/</link>
+	<description>Blog feed for James Doc - faith, hope, love (and web development)</description>
+	<language>en-gb</language>
+	<lastBuildDate>Tue, 06 Oct 2015 20:00:04 +0100</lastBuildDate>
+
+	<item>
+		<title>Code for the Kingdom</title>
+		<pubDate>Tue, 06 Oct 2015 19:33:56 +0100</pubDate>
+		<link>http://jamesdoc.com/blog/code-for-the-kingdom-2015</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/code-for-the-kingdom-2015</guid>
+		<comments>http://jamesdoc.com/blog/code-for-the-kingdom-2015#comments</comments>
+		<description><![CDATA[ <p>This happened. 120 people showed up. 16 projects were hacked on. God showed up. It was amazing. Onwards to C4tK 2016!</p><p>A list of all the projects is on <a href="https://indigitous.org/c4tk-project/london-england/" target="_blank">Indigitous</a>.</p><p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/code-for-the-kingdom-2015">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+
+	<item>
+		<title>Inlining SVG in CSS as a background image</title>
+		<pubDate>Fri, 11 Sep 2015 11:50:19 +0100</pubDate>
+		<link>http://jamesdoc.com/blog/inlining-svg-in-css-as-a-background-image</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/inlining-svg-in-css-as-a-background-image</guid>
+		<comments>http://jamesdoc.com/blog/inlining-svg-in-css-as-a-background-image#comments</comments>
+		<description><![CDATA[ <p> In a recent project, in an effort to reduce HTTP requests, I have been inlining various icons into my CSS via base64 encoding. It is really handy if you have a couple of icons that you need everywhere, e.g. a search or menu icon.</p>.menu { background-image: url(&lsquo;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAANCAYAAACgu+4kAAAAMElEQVQoz2MQZGDgJxczMDCwM4jxc/4nF4vwcdQziPJzfqAAlzMMPBgNxNFABAYiABBtcJ/dF5gEAAAAAElFTkSuQmCC&rsquo;);
+}<p> This is great, however using SVG is so much better than PNG, with the various screen sizes and pixel densities using PNGs basically means that you are going to end up with blurry icons. The technique that I had been using was similar however linked out to the SVG file:</p>.menu { background-image: url(&lsquo;menu icon.svg&rsquo;);
+}<p> This works, however for each icon a new HTTP request, something to avoid.</p><p> The recent discovery is that you can put in SVGs directly into the url attribute of the CSS background-image property:</p>.menu { background-image: url(&lsquo;data:image/svg+xml;utf8,&lt;svg xmlns=&ldquo;http://www.w3.org/2000/svg&rdquo; height=&ldquo;13px&rdquo; width=&ldquo;16px&rdquo; version=&ldquo;1.1&rdquo; xmlns:xlink=&ldquo;http://www.w3.org/1999/xlink&rdquo; viewBox=&ldquo;0 0 16 13&rdquo;&gt;&lt;g stroke=&ldquo;#160F09&rdquo; stroke-linecap=&ldquo;square&rdquo; stroke-width=&ldquo;2&rdquo;&gt;&lt;path d=&ldquo;m0.5 1h13.5&rdquo;/&gt;&lt;path d=&ldquo;m0.5 11h13.5&rdquo;/&gt;&lt;path d=&ldquo;m0.5 6h13.5&rdquo;/&gt;&lt;/g&gt;&lt;/svg&gt;&rsquo;);
+}<p> The thing that got me stumped for far too long was that this was working perfectly in WebKit browsers (Chrome, Safari, Opera, etc) but in Firefox you got no icons. Turns out that you need to URL encode certain things for this to work. Specifically with hex colours turning the # to &#37;23 made this a whole lot better.</p><p> I&rsquo;ve yet to work out how to solve this issue in Internet Explorer though</p><p> Thanks to Rab Nawaz answer to the <a href="http://stackoverflow.com/a/10768631">Inline SVG in CSS question on StackOverflow</a> for helping me solve my FireFox quandary.</p><p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/inlining-svg-in-css-as-a-background-image">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+
+	<item>
+		<title>KeePass OS X</title>
+		<pubDate>Mon, 20 Jul 2015 22:36:39 +0100</pubDate>
+		<link>http://jamesdoc.com/blog/keepass-os-x</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/keepass-os-x</guid>
+		<comments>http://jamesdoc.com/blog/keepass-os-x#comments</comments>
+		<description><![CDATA[ <p> After the <a href="https://blog.lastpass.com/2015/06/lastpass-security-notice.html/" target="_blank">LastPass security breach in June</a> I&#39;ve been meaning to change my method of securing my passwords. I had been put off KeePass because of the clunky mac client, however yesterday I discovered <a href="http://mstarke.github.io/MacPass/" target="_blank">MacPass</a> which turned that around for me.</p><p> It is still under a lot of development, however it has enabled me to get everything moved out of LastPass into a password vault that I own, rather than host on LastPass&#39; servers somewhere.</p><p> On Android I&#39;m using&nbsp;<a href="https://play.google.com/store/apps/details?id=com.lukaszgajos.keepassmob" target="_blank">KeePassMob</a>&nbsp;which works nicely too, plus has a lovely Material UI design.</p><p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/keepass-os-x">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+
+	<item>
+		<title>HTML5 audio fade in and out</title>
+		<pubDate>Wed, 22 Apr 2015 11:04:19 +0100</pubDate>
+		<link>http://jamesdoc.com/blog/html5-audio-fade-in-and-out</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/html5-audio-fade-in-and-out</guid>
+		<comments>http://jamesdoc.com/blog/html5-audio-fade-in-and-out#comments</comments>
+		<description><![CDATA[ <p> I&rsquo;ve just discovered that the animate function within jQuery can provide more than just visual animation. One such &lsquo;animation&rsquo; is adjusting the volume in the audio tag, thus creating a good method for creating fade in or fade out:</p>$(‘.btn-fadeout’).on(‘click’, function(e) {	e.preventDefault();	audio_player = $(‘audio.audio_player`);	audio_player.animate(	{ volume: 0 }, // Target volume	500, // How long should the fadeout take	function() {	audio_player[0].pause(); // Pause the audio	audio_player[0].currentTime = 0; // Be kind, rewind.	audio_player[0].volume = 1; // Reset volume	}	);
+}
+<p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/html5-audio-fade-in-and-out">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+
+	<item>
+		<title>Easter. Kenya.</title>
+		<pubDate>Sun, 05 Apr 2015 15:32:58 +0100</pubDate>
+		<link>http://jamesdoc.com/blog/easter-kenya</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/easter-kenya</guid>
+		<comments>http://jamesdoc.com/blog/easter-kenya#comments</comments>
+		<description><![CDATA[ <p> As a Christian, Easter is a time of celebration for myself and my family. Today, however, I am in shock from the news of <a href="http://www.theguardian.com/world/2015/apr/02/kenya-minister-says-70-dead-in-al-shabaab-attack-on-university" target="_blank">the attacks in Kenyan university directed at the Christian students</a>. While I don&rsquo;t know any of the individuals who lost their lives on Thursday, my work with <a href="http://ifesworld.org" target="_blank">IFES</a> put me in touch with staff and students in universities all over the world, including within Kenya. Today I read this message from the IFES movement in Kenya:</p><blockquote> <p> We can confirm that the Christian Union members in a prayer meeting in Garissa University College were among the first targets of the terrorist attack. It appears most of whom died. They have gone to be with the master whom they loved and served. We pray for strength for the relatives as they seek to identify bodies, and rest them in peace. Shalom. - <a href="https://www.facebook.com/focus.enya" target="_blank">FOCUS Kenya</a></p></blockquote><p> I am grieved by the murders of these students, and the many others who died proclaiming Christ in Garissa University. I pray for the families, friends and the groups like FOCUS Kenya struggling in the aftermath. But I praise God for the life of these students, who through the death and resurrection of Jesus Christ, are with &lsquo;<em>the master whom they loved and served</em>&rsquo;.</p><p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/easter-kenya">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+
+	<item>
+		<title>Firewall blocking git:// URLs</title>
+		<pubDate>Fri, 06 Mar 2015 13:26:08 +0000</pubDate>
+		<link>http://jamesdoc.com/blog/firewall-blocking-git-urls</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/firewall-blocking-git-urls</guid>
+		<comments>http://jamesdoc.com/blog/firewall-blocking-git-urls#comments</comments>
+		<description><![CDATA[ <p> I&#39;ve just discovered that git:// urls are blocked by internal policy. Frustrating. Fortunately http:// and https://github.com/etc still work for git commands.</p><p> Frontend tools such as <a href="http://bower.io" target="_blank">Bower</a> they assume that git:// urls will be fine, which if they are not creates lots of error messages.</p><p> However you can set your git config to rewrite the default protocol with the following command in the terminal:</p><p> git config --global url.https://github.com/.insteadOf git://github.com/</p><p> Many thanks to Tobu on <a href="http://stackoverflow.com/a/11383587/355660" target="_blank">StackOverflow</a> for pointing this one out.</p><p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/firewall-blocking-git-urls">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+
+	<item>
+		<title>The Story Conference 2015</title>
+		<pubDate>Tue, 24 Feb 2015 21:45:25 +0000</pubDate>
+		<link>http://jamesdoc.com/blog/the-story-conference-2015</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/the-story-conference-2015</guid>
+		<comments>http://jamesdoc.com/blog/the-story-conference-2015#comments</comments>
+		<description><![CDATA[ <p> Last week I went along to The Story Conference.</p><p> I wrote up some of my thoughts from the day on the V&amp;A blog:&nbsp;<a href="http://www.vam.ac.uk/blog/digital-media/the-story-conference-2015-reflections-from-a-web-developer" target="_blank">The Story Conference 2015 &ndash; Reflections from a Web Developer</a></p><p> While my raw notes (which get worse and worse throughout the day) can be found on Dropbox: <a href="https://www.dropbox.com/s/d4v7fwn8kkq39cw/20150220.The Story 2015.md?dl=0" target="_blank">20150220.The Story 2015.md</a></p><p> Share and enjoy.</p><p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/the-story-conference-2015">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+
+	<item>
+		<title>Backing up AWS S3 bucket to a local machine…</title>
+		<pubDate>Thu, 05 Feb 2015 15:08:24 +0000</pubDate>
+		<link>http://jamesdoc.com/blog/backing-up-aws-s3-bucket-to-a-local-machine</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/backing-up-aws-s3-bucket-to-a-local-machine</guid>
+		<comments>http://jamesdoc.com/blog/backing-up-aws-s3-bucket-to-a-local-machine#comments</comments>
+		<description><![CDATA[ <p>There are lots of solutions that talk about making a copy of a local folder and sending it to an S3 bucket. The solution I’ve needed is the reverse of this; creating a local backup of an bucket.</p>TlDr;<p>Download <a href="http://s3tools.org/">s3tools</a> onto your server and configure it… Details on configuring are below.</p>1. Create an AWS IAM User<p>In the Security Credentials of the AWS console create a new IAM user. The user policy only needs read-only access to S3.</p>{ "Version": "2012-10-17", "Statement": [ { "Action": [ "s3:Get*", "s3:List*" ], "Effect": "Allow", "Resource": "*" } ]
+}<p>Make sure you note down the access keys, we’ll need them later.</p>2. Download Amazon S3 Tools<p>Amazon S3 Tools is a simple command line script that allows read / write access to S3 buckets.</p><p>You can download it via their <a href="http://s3tools.org/download">website</a>, or via your flavour of Linux repository. For Ubuntu that is just sudo apt-get install s3cmd</p>3. Configure<p>Once installed you need to tell S3 Tools the access keys to Amazon, and a couple of other configuration settings. This is started by running s3cmd —configure. You will be asked for:</p><ul><li>the access key,</li><li>secret,</li><li>a password (to encrypt the local config, make one up and note it down),</li><li>a path for GPG (just press return for default),</li><li>use HTTPS (a good idea),</li></ul><p>Once the settings are entered you can then test the connection, and if everything works the settings can be saved.</p>4. Download your bucket<p>S3 Tools has a lot of <a href="http://s3tools.org/usage">options</a> to go back and forth between S3. A couple to note:</p><p>s3cmd ls - Lists your buckets<br>s3cmd get s3://[bucket-name]/* - Download your bucket</p><p>In my case I want to pull a directory within a bucket down, and if the files have changed over write them. The command I am using is:</p><p>s3cmd sync --check-md5 --force -r s3://[bucket-name]/[directory-name]/ /home/[backup-location]/</p><p>A quick explanation:</p><ul><li>sync - Synchronises the directory</li><li>check-md5 - look at the md5 hash of a file to see if it has changed</li><li><p>force - force overwrite the changed files rather than asking for permission</p>-r - do it recursively</li></ul><p>It is worth noting that if you want to do a test run before writing data you can add in the dry-run option which will output what it would be doing, but not actually run it.</p>5. Optional extra…<p>To create a historical record you can then use a solution like <a href="http://bacula.org">Bacula</a> to keep various versions of the folder. However, that is the topic of another blog.</p><p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/backing-up-aws-s3-bucket-to-a-local-machine">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+
+	<item>
+		<title>Reducing Wordpress database size</title>
+		<pubDate>Fri, 09 Jan 2015 09:30:14 +0000</pubDate>
+		<link>http://jamesdoc.com/blog/reducing-wordpress-database-size</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/reducing-wordpress-database-size</guid>
+		<comments>http://jamesdoc.com/blog/reducing-wordpress-database-size#comments</comments>
+		<description><![CDATA[ <p> After having a Wordpress blog running for the last year with 320 users posting to it, and over 1500 posts on it I&rsquo;ve noticed that the database size has been rapidly approaching the 1Gb size. This struck me as much larger than expected- it only contains text, so why is it so large and how can I reduce it?</p><p> <em><strong>Safety warning</strong>:</em> Make sure you have a database backup before doing any of these&hellip;</p><h2> Turn off or reduce saved revisions</h2><p> By default Wordpress helpfully makes copies of each revision you make to a post, so if you accidentally delete something mid-edit it is possible to go back and retrieve it. This is a really useful feature, however I don&rsquo;t need an infinite number of revisions saved.</p><p> In the wp_config.php file you can set the number of revisions, or disable them entirely with the following. Here I keep the last 3, but you can set it to 0 or to any number that you want.</p>define(&#39;WP_POST_REVISIONS&#39;, 3);<p> This limits it going forward, however the database is still full of revisions so you need to go into the database and clear out the existing revisions with the following query:</p>DELETE posts, relationships, meta
+FROM [your_table_prefix]_posts posts
+LEFT JOIN [your_table_prefix]_term_relationships relationships ON (posts.ID = relationships.object_id)
+LEFT JOIN [your_table_prefix]_postmeta meta ON (posts.ID = meta.post_id)
+WHERE posts.post_type = &#39;revision&#39;<h2> Clear out the commentmeta table</h2><p> Being a Wordpress blog the site is constantly hit by spammers so I have installed Akismet. While this plugin automatically deletes spam comments after 15 days, it does leave a lot of data in the commentmeta table. I&rsquo;ve set up a little function that automatically purges this table of Akismet data every month running this query:</p>DELETE FROM [your_table_prefix]_commentmeta WHERE meta_key LIKE &quot;%akismet%&quot;<p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/reducing-wordpress-database-size">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+
+	<item>
+		<title>Facebook API: Getting counts for likes, comments and shares for page’s feed</title>
+		<pubDate>Thu, 08 Jan 2015 17:12:37 +0000</pubDate>
+		<link>http://jamesdoc.com/blog/facebook-api-getting-counts-for-likes-comments-and-shares-for-p</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/facebook-api-getting-counts-for-likes-comments-and-shares-for-p</guid>
+		<comments>http://jamesdoc.com/blog/facebook-api-getting-counts-for-likes-comments-and-shares-for-p#comments</comments>
+		<description><![CDATA[ <p> By default when you request a page&rsquo;s feed from the Facebook API via /v2.2/[pageid]/feed a lot a JSON is sent back, including very specific data about likes and comment such as who, what, when, etc. However the actual number of likes or comments for that status is not included. There are API endpoints to hit to get this data on a status by status basis (/v2.2/[status_id]/likes?summary=true and /v2.2/[status_id]/comments?summary=true), however that means making two additional calls for each status. Not ideal.</p><p> To get this data into the feed endpoint request you need to specify the fields you want to return and then state that you want summary to be returned as well</p><blockquote> <p> https://graph.facebook.com/v2.2/[page_id]/feed?fields=id,message,picture,link,shares,created_time,comments.limit(1).summary(true),likes.limit(1).summary(true)&amp;access_token=[YOUR_ACCESS_TOKEN]</p></blockquote><p> You&rsquo;ll notice that I&rsquo;ve included limit(1), for both comments and likes. For the project I am working on I am not interested in the actual content of the comments for the moment, I just need to the raw number. Ideally it would be set to 0, however then the API won&rsquo;t return the summary.</p><p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/facebook-api-getting-counts-for-likes-comments-and-shares-for-p">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+
+	<item>
+		<title>Content Drilldown with the Google Analytics Core Reporting API</title>
+		<pubDate>Wed, 17 Dec 2014 15:30:39 +0000</pubDate>
+		<link>http://jamesdoc.com/blog/content-drilldown-with-the-google-analytics-core-reporting-api</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/content-drilldown-with-the-google-analytics-core-reporting-api</guid>
+		<comments>http://jamesdoc.com/blog/content-drilldown-with-the-google-analytics-core-reporting-api#comments</comments>
+		<description><![CDATA[ <p> Today I&rsquo;ve been trying to replicate the content drilldown function from Google Analytics through their Core Reporting API. The solution I came to requests pagePathLevel# in the dimension, and then filters on various pagePathLevel#:</p><p> For example if you wanted to the page views for the content drilldown at /level1/level2/level3 you could run this:</p><p><strong>id</strong>=ga:#######<br /> <strong>metrics</strong>=PageView, Sessions, etc<br /> <strong>sort</strong>=-ga:page views<br /> <strong>start-date</strong>=2014&ndash;11&ndash;16<br /> <strong>end-date</strong>=2014&ndash;12&ndash;16<br /> <strong>filters</strong>=ga:pagePathLevel1==/level1/;ga:pagePathLevel2==/level2/<br /> <strong>dimensions</strong>=ga:pagePathLevel3</p><p> A handy tool to test these queries is the <a href="https://ga-dev-tools.appspot.com/explorer/" target="_blank">Google Analytics Query Explorer</a>.</p><p> In my case I wanted to get a list of the <a href="http://www.vam.ac.uk/page/e/exhibitions/" target="_blank">most popular exhibitions at the V&amp;A</a>. The URL structure is: content/exhibitions/[expo-slug], so the query I am running is:</p><p> <strong>id</strong>=ga:#######<br /> <strong>dimensions</strong>=ga:pagePathLevel3<br /> <strong>metrics</strong>=ga:pageviews<br /> <strong>filters</strong>=ga:pagePathLevel1==/content/;ga:pagePathLevel2==/exhibitions/<br /> <strong>sort</strong>=-ga:pageviews<br /> <strong>start-date</strong>=2014&ndash;11&ndash;16<br /> <strong>end-date</strong>=2014&ndash;12&ndash;16<br /> <strong>max-results</strong>=50</p><p> Right now, <a href="http://www.vam.ac.uk/content/exhibitions/exhibition-constable-the-making-of-a-master" target="_blank">Constable</a> and <a href="http://www.vam.ac.uk/content/exhibitions/exhibition-horst-photographer-of-style" target="_blank">Horst</a> are top of the list!</p><p> Hopefully this will help someone else.</p><p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/content-drilldown-with-the-google-analytics-core-reporting-api">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+
+	<item>
+		<title>Where is all my email space going?</title>
+		<pubDate>Sun, 16 Nov 2014 18:18:35 +0000</pubDate>
+		<link>http://jamesdoc.com/blog/where-is-all-my-email-space-going</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/where-is-all-my-email-space-going</guid>
+		<comments>http://jamesdoc.com/blog/where-is-all-my-email-space-going#comments</comments>
+		<description><![CDATA[ <p> It has been a long while since I have had to worry about how much space I have for emails thanks to Gmail giving me a lot of free space. However that isn&rsquo;t the same for everyone; many people will still have restrictions on how much space on the email server they can take up. When setting up email accounts for clients using my web server I normally set the cap at about 1Gb.</p><p> I&rsquo;ve had a couple of emails recently telling me that a few of these people are rapidly approaching their limit, which was then followed up by a couple of emails from the client saying &ldquo;help, I don&rsquo;t know where all these emails are&rdquo;.</p><p> A little bit of research told me that Apple Mail could quite easily solve this quandary for me:</p><ol> <li> Set up the email account in Apple Mail</li> <li> Right click &lsquo;Inbox&rsquo; and select &lsquo;Account Info&rsquo;</li> <li> Read the graph!</li></ol><p> </p><p> In my case all the space is been eaten by sent emails. Useful to know!</p><p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/where-is-all-my-email-space-going">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+
+	<item>
+		<title>Radcliffe Camera</title>
+		<pubDate>Wed, 05 Nov 2014 23:33:11 +0000</pubDate>
+		<link>http://jamesdoc.com/blog/radcliffe-camera</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/radcliffe-camera</guid>
+		<comments>http://jamesdoc.com/blog/radcliffe-camera#comments</comments>
+		<description><![CDATA[ <p><img src="http://jamesdoc.com/assets/uploads/banners/radcliffe-camera.jpg" alt="Banner image - Radcliffe Camera" width="100%" /></p><p> I was in Oxford last night and snapped this photo of the Radcliffe Camera. This one has gone through a little bit of post-production, but still impressed at how well the Nexus 5 handles low light.</p><p> I&#39;ve put the full version on my Tumblr:<br /> <a href="http://thejamesdoc.tumblr.com/post/101878267372/radcliffe-camera-oxford">thejamesdoc.tumblr.com</a></p><p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/radcliffe-camera">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+
+	<item>
+		<title>Wi-Fi Splash Screen</title>
+		<pubDate>Mon, 20 Oct 2014 18:20:20 +0100</pubDate>
+		<link>http://jamesdoc.com/blog/wi-fi-splash-screen</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/wi-fi-splash-screen</guid>
+		<comments>http://jamesdoc.com/blog/wi-fi-splash-screen#comments</comments>
+		<description><![CDATA[ <p><img src="http://jamesdoc.com/assets/uploads/banners/wi-fi-splash-screen.jpg" alt="Banner image - Wi-Fi Splash Screen" width="100%" /></p><p> One of the projects I&#39;ve been involved in at work has been turning the embarrassing Wi-Fi splash screen into something beautiful. I&#39;m quite happy with how this one has turned out.</p><p> I&#39;ve written up the process on the main <a href="http://www.vam.ac.uk/blog/digital-media/designing-a-new-wi-fi-splash-screen?utm_source=Blog&amp;utm_medium=James Doc Blog&amp;utm_campaign=James Doc WiFi Post" target="_blank">V&amp;A blog</a> which if you are interested you can read...</p><p> <a href="http://www.vam.ac.uk/blog/digital-media/designing-a-new-wi-fi-splash-screen?utm_source=Blog&amp;utm_medium=James Doc Blog&amp;utm_campaign=James Doc WiFi Post" target="_blank">Designing a new Wi-Fi splash screen</a></p><p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/wi-fi-splash-screen">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+
+	<item>
+		<title>Candela at the V&A</title>
+		<pubDate>Fri, 19 Sep 2014 20:08:16 +0100</pubDate>
+		<link>http://jamesdoc.com/blog/candela-at-the-va</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/candela-at-the-va</guid>
+		<comments>http://jamesdoc.com/blog/candela-at-the-va#comments</comments>
+		<description><![CDATA[ <p>This week the V&amp;A has been taken over by the <a href="http://www.londondesignfestival.com" target="_blank">London Design Festival</a>. Across the building are some wonderful installations across the building, including <a href="http://www.londondesignfestival.com/events/officine-panerai-collaborates-de-pass-montgomery-and-mcintyre" target="_blank">Candela</a> this entrancing, rotating wheel in the tapestry gallery. I&rsquo;ve spent a fair amount of time this week just enjoying the new patterns being created on phosphorescent disc.</p><p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/candela-at-the-va">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+
+	<item>
+		<title>Emotional and intellectual assent</title>
+		<pubDate>Fri, 01 Aug 2014 14:52:10 +0100</pubDate>
+		<link>http://jamesdoc.com/blog/emotional-and-intellectual-assent</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/emotional-and-intellectual-assent</guid>
+		<comments>http://jamesdoc.com/blog/emotional-and-intellectual-assent#comments</comments>
+		<description><![CDATA[ <p>An extract from today's lunch time read.</p><blockquote> <p> It would seem that Christianity requires both emotional and intellectual assent. If there is only emotion, the mind asks troubling questions that, if not answered, might lead to a falling away, for love cannot be sustained without understanding. On the other hand, there is a gap which must be bridged by emotion. If one is suspicious of the upsurge of feeling that may be incipient faith, how is one to cross the gap?</p> - Sheldon Vanauken: A Severe Mercy (1977)</blockquote><p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/emotional-and-intellectual-assent">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+
+	<item>
+		<title>New Start</title>
+		<pubDate>Wed, 01 Jan 2014 10:44:05 +0000</pubDate>
+		<link>http://jamesdoc.com/blog/new-start</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/new-start</guid>
+		<comments>http://jamesdoc.com/blog/new-start#comments</comments>
+		<description><![CDATA[ <p> Another year ends and a new one begins. This change happens so often, but this year for me brings more than just a change in final digit.</p><p> The emotions around this are conflicted. The new year is both exciting&hellip; and scary. A lot of 2013 must remain where it is- locked in 2013.</p><p> 2014 brings <a href="http://jamesdoc.com/i/vam.gif" target="_blank">a new job</a>. The new job provokes a move to <a href="http://jamesdoc.com/i/london.gif" target="_blank">London</a>. In turn, moving to London means finding a new church and building a new set of relationships.</p><p> So much change in such a short space in time. If you are the praying type I would appreciate it. Either way, give me a call some time, or drop in to see me; check that my head is still above water.</p><p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/new-start">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+
+	<item>
+		<title>Work out where all your Dropbox space is going</title>
+		<pubDate>Thu, 26 Dec 2013 18:05:38 +0000</pubDate>
+		<link>http://jamesdoc.com/blog/work-out-where-all-your-dropbox-space-is-going</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/work-out-where-all-your-dropbox-space-is-going</guid>
+		<comments>http://jamesdoc.com/blog/work-out-where-all-your-dropbox-space-is-going#comments</comments>
+		<description><![CDATA[ <p><img src="http://jamesdoc.com/assets/uploads/banners/work-out-where-all-your-dropbox-space-is-going.jpg" alt="Banner image - Work out where all your Dropbox space is going" width="100%" /></p><p> I received all horrible message the other day indicating that my <a href="https://db.tt/gXwWBkU">Dropbox</a> is approaching it&rsquo;s maximum size. I&rsquo;ve managed to pick up a lot of free space over the years, however I&rsquo;ve now reached 95% of my 6.3Gb of free space. Soon I will have to start paying for the service, however before I do this I wanted to work out if there were any specific files that were consuming all of my allocation.</p><p> The quickest solution I found was to download an application called <a href="http://www.derlien.com/">Disk Inventory X</a>*. It is designed to analyse your entire hard drive and show what is using all the space. One of the nice features is that you can set it up to only look in specific folders. Using this you can then analyse the contents of your Dropbox and produce a detailed report showing the folders that have the most data within, and which files are the biggest.</p><p> Currently the 2.4Gb of photos that are automagically uploaded from my mobile take up a lot of my space. However there are some other significant folders, such as archives of all the website I&rsquo;ve built, which take up a fair amount of room too.</p><p> Using this has enabled me to delete or move certain files to get back down to 75% use. More work will need to be done later I think, however it has put off the need to upgrade for a few more months.</p><p> *If you are using Windows there are a couple of alternatives which seem to work in a similar way including <a href="http://windirstat.info">WinDirStat</a> and <a href="http://www.uderzo.it/main_products/space_sniffer/">Space Sniffer</a>.</p><p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/work-out-where-all-your-dropbox-space-is-going">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+
+	<item>
+		<title>Locking the screen in OS X</title>
+		<pubDate>Mon, 23 Dec 2013 14:11:12 +0000</pubDate>
+		<link>http://jamesdoc.com/blog/locking-the-screen-in-os-x</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/locking-the-screen-in-os-x</guid>
+		<comments>http://jamesdoc.com/blog/locking-the-screen-in-os-x#comments</comments>
+		<description><![CDATA[ <blockquote> <p> Control + Shift + Eject.</p></blockquote><p> For some reason this shortcut never managed to commit itself to my memory. As a result I always have to trawl Google searching for <em>&rsquo;OS X keyboard shortcut to lock screen&rsquo;</em>.</p><p> It is also advised in System Preferences &gt; Security &amp; Privacy you set <em>Require password</em> to be immediate.</p><p> In Windows you can [Windows Key + L] and in many flavours of Linux you can [Ctrl + Alt + L] or type something into the terminal.</p><p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/locking-the-screen-in-os-x">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+
+	<item>
+		<title>Improve productivity. Block websites.</title>
+		<pubDate>Sat, 21 Dec 2013 16:00:37 +0000</pubDate>
+		<link>http://jamesdoc.com/blog/improve-productivity.-block-websites</link>
+		<guid isPermaLink="true">http://jamesdoc.com/blog/improve-productivity.-block-websites</guid>
+		<comments>http://jamesdoc.com/blog/improve-productivity.-block-websites#comments</comments>
+		<description><![CDATA[ <p> Recently I&rsquo;ve taken the sweeping step of preventing my computer from accessing specific websites. These site I have determined to be time-suckers, ones that I can simply live without. I don&rsquo;t need to habitually check in on Facebook or on Instagram from my laptop, especially when I really should be working!</p><p> To do this I&rsquo;ve done a quick hack to the <em>hosts</em> file. It is kind of like an internet address book for computers - it matching a web address with an IP address. Obviously it doesn&rsquo;t contain a list of every web address, that&rsquo;s where your Internet Service Provider (ISP) comes in, however the <em>hosts</em> file is where your computer looks first. If the address is found, then it doesn&rsquo;t need to consult the ISP. So to block websites from my computer I&rsquo;ve given the <em>hosts</em> file the wrong address!</p><p> For example, one time-sucking website is Facebook. I don&rsquo;t need access to it from my laptop so I&rsquo;ve told my host file that the IP address is 127.0.0.1, the address of my own computer, and magically the computer cannot find site.</p><p> Every operating system has a <em>hosts</em> file, and <a href="http://en.wikipedia.org/wiki/Hosts_file#Location_in_the_file_system">Wikipedia has a list of where it is on your hard drive</a>. Open up the file in your preferred text editor (Notepad or TextEdit will work) and you&rsquo;ll see a file like this:</p><blockquote> <p> 127.0.0.1 localhost<br /> 255.255.255.255 broadcasthost<br /> ::1 localhost<br /> fe80::1%lo0 localhost</p></blockquote><p> At the end of this file add:</p><blockquote> <p> 127.0.0.1 facebook.com<br /> 127.0.0.1 [anyOtherDomainToBlock.com]</p></blockquote><p> Save the file, reboot your machine and try to access the website.</p><p> Hello productivity.</p><p>What are your thoughts? Share them at <a href="http://jamesdoc.com/blog/improve-productivity.-block-websites">http://jamesdoc.com/</a></p> ]]></description>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,131 @@
+	/* CSS Reset */
+	html {margin:0;padding:0;border:0;}
+	body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
+	article, aside, dialog, figure, footer, header, hgroup, nav, section {display:block;}
+	body {line-height:1.5;background:white;}
+	table {border-collapse:separate;border-spacing:0;}
+	caption, th, td {text-align:left;font-weight:normal;float:none !important;}
+	table, th, td {vertical-align:top;}
+	blockquote:before, blockquote:after, q:before, q:after {content:'';}
+	blockquote, q {quotes:"" "";}
+	a img {border:none;}
+	ul {list-style-type: none;}
+	
+	/* Main Styles */
+	
+	body {
+		color: #000;
+		font-family: serif;
+		text-align: left;
+	}
+		
+	h1{
+		color: #8B0000;
+		font-size: 3.4em;
+		line-height: 1.2em;
+	}
+	
+	h2, h3{
+		font-size: 1.5em;
+		line-height: 1em;
+	}
+	
+	p{
+		text-align: left;
+		padding: 5px 0;
+	}
+	
+	a{
+		color: #8B0000;
+		text-decoration: underline;
+	}
+	
+		section a[href]:after {
+			content: " (" attr(href) ") ";
+		}
+		
+		h3 a[href]:after{content: "";}
+		
+		.post-read-more a[href]:after {
+			content: "(" attr(href) ") ";
+		}
+		
+	blockquote{
+	   font-style: italic;
+	   border-left: 5px solid #8B0000;
+	   padding: 10px 0;
+	}
+	
+	img{
+		width: 100%;
+	}
+	
+	header{
+		border-bottom: 3px solid #3b3b3b;
+		padding: 0 10px 15px 10px;
+	}
+	
+		h1 a{color: #8B0000;}
+		h2 a{color: #ffffff;}
+		hgroup a{text-decoration: none;border:0;}
+	
+	section{}
+
+		section h3, section h4{
+		   padding: 10px 0;
+		}
+		
+		section h4{
+		   font-size: 1.2em;
+		}
+	   	
+	   	section ul, section ol{
+	   		margin: 0;
+	   	}
+	   	
+		section ul{
+			border-left: 5px solid #8B0000;
+			list-style-type:none;
+		}
+        
+		section ol{
+			padding: 0 0 0 40px;
+			list-style-type: decimal-leading-zero;
+		}
+	   
+	   section li{
+	       text-align: left;
+	       padding: 5px 10px 5px;
+	   }
+	   
+	.inner{
+	   padding: 10px;
+	}
+	
+	    
+	#container{
+        margin: 0 auto;
+		max-width: 1100px;
+	}
+	
+	footer{
+	   border-top: 3px solid #3b3b3b;
+	   clear: both;
+	   padding: 0 10px;
+	}
+	
+		footer a{text-shadow: 0 0 0;}
+		
+		footer p{
+			font-size: 0.5em;
+			text-align: right;
+		}
+	
+	/* Specfics */
+	.post-information { text-align: left; }
+	.post-comments img{float: left; padding: 0 1em 1em 0;width: auto;}
+	.post-comment {border-top: 4px solid #777; clear: both; padding: 1em 0;}
+	.page-comment-content{display: block;margin-left: 6em;}
+	
+/* Hide */
+form, .hidden, .print-hide, nav, .sidebar, #post-comments, .footer-login{display:none;}
