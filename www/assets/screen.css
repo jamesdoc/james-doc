@@ -40,17 +40,23 @@ h1 { font-size: 2em; }
 h2 { font-size: 1.5em; }
 
 p {
-  line-height: 150%;
-  margin: 0.5em 0;
+  line-height: 1.75em;
+  margin: 1em 0;
 }
 
 a {
-  color: #2e5358;
   border-bottom: 1px solid #2e5358;
+  color: #2e5358;
 }
 
 a:hover{
   border-bottom: 1px dashed #2e5358;
+}
+
+blockquote {
+  border-left: 10px solid #eee;
+  font-style: italic;
+  padding: 5px 0 5px 20px;
 }
 
 code.multiline{
@@ -136,7 +142,9 @@ code.multiline{
   padding: 0.25em 0;
 }
 
-.post {}
+.post {
+  max-width: 800px;
+}
 
 .post__header {
   margin-bottom: 1em;
